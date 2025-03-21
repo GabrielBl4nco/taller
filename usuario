@@ -1,0 +1,33 @@
+class Usuarios:
+    def _init_(self, nombre, nickname, clave):
+        self.nombre = nombre
+        self.nickname = nickname
+        self.clave = clave
+
+    def guardarUsuario(self, lista_usuarios):
+        usuario = {
+            "nombre": self.nombre,
+            "nickname": self.nickname,
+            "clave": self.clave
+        }
+        lista_usuarios.append(usuario)
+        return lista_usuarios
+
+    def mostrar_informacion(self):
+        return f"Nombre: {self.nombre}, Nickname: {self.nickname}, Clave: {self.clave}"
+    def guardarUsuario(nombre, nickname, clave, lista_usuarios):
+ 
+        usuario = {
+        "nombre": nombre,
+        "nickname": nickname,
+        "clave": clave
+    }
+        lista_usuarios.append(usuario)
+        return lista_usuarios
+
+
+        lista_usuarios = [] 
+        guardarUsuario("Ana García", "anagarcia", "secreto123", lista_usuarios)
+        guardarUsuario("Carlos Pérez", "carlosperez", "clave456", lista_usuarios)
+
+        print(lista_usuarios)
