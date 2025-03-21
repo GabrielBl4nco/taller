@@ -1,0 +1,5 @@
+from clases.usuarios import guardarUsuario
+lista_usuarios = []
+guardarUsuario("Ana García", "anagarcia", "secreto123", lista_usuarios)
+guardarUsuario("Carlos Pérez", "carlosperez", "clave456", lista_usuarios)
+print(lista_usuarios)
