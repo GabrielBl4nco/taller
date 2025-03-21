@@ -1,0 +1,39 @@
+import tkinter as tk
+from tkinter import messagebox
+from clases.usuarios import Usuarios
+
+lista_usuarios = []  
+
+def guardar_usuario():
+    nombre = entrada_nombre.get()
+    nickname = entrada_nickname.get()
+    clave = entrada_clave.get()
+
+    usuario = Usuarios(nombre, nickname, clave)
+    usuario.guardarUsuario(lista_usuarios)
+
+    messagebox.showinfo("Usuario Guardado", f"Usuario {nombre} guardado con éxito.")
+    print(lista_usuarios) 
+
+ventana = tk.Tk()
+ventana.title("Formulario de Usuario")
+
+etiqueta_nombre = tk.Label(ventana, text="Nombre:")
+etiqueta_nombre.grid(row=0, column=0, padx=10, pady=10)
+entrada_nombre = tk.Entry(ventana)
+entrada_nombre.grid(row=0, column=1, padx=10, pady=10)
+
+etiqueta_nickname = tk.Label(ventana, text="Nickname:")
+etiqueta_nickname.grid(row=1, column=0, padx=10, pady=10)
+entrada_nickname = tk.Entry(ventana)
+entrada_nickname.grid(row=1, column=1, padx=10, pady=10)
+
+etiqueta_clave = tk.Label(ventana, text="Clave:")
+etiqueta_clave.grid(row=2, column=0, padx=10, pady=10)
+entrada_clave = tk.Entry(ventana, show="·")
+entrada_clave.grid(row=2, column=1, padx=10, pady=10)
+
+boton_guardar = tk.Button(ventana, text="Guardar", command=guardar_usuario)
+boton_guardar.grid(row=3, columnspan=2, pady=20)
+
+ventana.mainloop()
